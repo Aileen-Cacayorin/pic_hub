@@ -13,6 +13,7 @@ class ImagesController < ApplicationController
     @album = Album.find(params[:album_id])
     @image = Image.new(image_params)
     @image.album = @album
+    @image.user = @album.user
     if @image.save
       redirect_to album_path(@album)
     else
