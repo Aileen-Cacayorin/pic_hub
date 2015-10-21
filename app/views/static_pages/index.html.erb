@@ -1,5 +1,10 @@
-<% if @albums.any? %>
-  <% @albums.each do |album| %>
-    <li><%= link_to album.name, album_path(album) %></li>
-  <% end %>
+<h1>Photostream</h1>
+<div class="container">
+<% if @images.any? %>
+  <% @images.each do |image| %>
+    <div class="col-md-6">
+      <%= image_tag image.picture.url(:display), class: "picture-tile" %>
+    </div>
+    <% end %>
 <% end %>
+</div>

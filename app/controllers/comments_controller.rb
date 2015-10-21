@@ -18,6 +18,18 @@ class CommentsController < ApplicationController
     end
   end
 
+  def edit
+    @image = Image.find(params[:image_id])
+    @comment = Comment.find(params[:id])
+  end
+
+  def update
+    @image = Image.find(params[:image_id])
+    @comment = Comment.find(params[:id])
+    @comment.update(comment_params)
+    redirect_to image_path(@image)
+  end
+
   def destroy
     @comment = Comment.find(params[:id])
     @comment.destroy

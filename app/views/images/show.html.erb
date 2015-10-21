@@ -9,6 +9,7 @@
         <%= comment.created_at %>
         <% if current_user == comment.user %>
           <%= link_to 'Delete', image_comment_path(@image, comment), :method => :delete %>
+          <%= link_to 'Edit', edit_image_comment_path(@image, comment)  %>
         <% end %>
       </li>
     <% end %>
