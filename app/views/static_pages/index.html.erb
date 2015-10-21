@@ -1,1 +1,5 @@
-This is the home page
+<% if @albums.any? %>
+  <% @albums.each do |album| %>
+    <li><%= link_to album.name, album_path(album) %></li>
+  <% end %>
+<% end %>

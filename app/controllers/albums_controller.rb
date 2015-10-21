@@ -23,6 +23,17 @@ class AlbumsController < ApplicationController
     @images = @album.images
   end
 
+  def destroy
+    @album = Album.find(params[:id])
+    if current_user == @album.user
+      @album.destroy
+      redirect_to user_path(@user)
+    else
+      flash[:alert] = "This is not your album! This album belongs to #{@album.user.username}"
+      redirect_to :back
+    end
+  end
+
   private
    def set_default
      @user = current_user

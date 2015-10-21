@@ -1,7 +1,11 @@
 <h2><%= @album.name %></h2>
-
-<% @images.each do |image| %>
-  <li><%= image_tag image.picture.url(:thumb) %></li>
+<% if current_user == @album.user %>
+<%= link_to "Delete", album_path(@album), :data => {:confirm => "Are you sure?",
+                                          method: :delete} %>
+<%= render 'images/form' %>
 <% end %>
 
-<%= render 'images/form' %>
+
+<% @images.each do |image| %>
+  <li><%= link_to (image_tag image.picture.url(:thumb)), image_path(image) %></li>
+<% end %>
