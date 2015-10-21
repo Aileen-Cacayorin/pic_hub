@@ -1,1 +1,18 @@
 <%= image_tag @image.picture.url(:large) %>
+
+<% if @image.comments.any? %>
+  <ul>
+    <% @image.comments.each do |comment| %>
+      <li>
+        <%= comment.user.username %>
+        <%= comment.body %><br>
+        <%= comment.created_at %>
+        <% if current_user == comment.user %>
+          <%= link_to 'Delete', image_comment_path(@image, comment), :method => :delete %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render 'comments/form'%>
