@@ -1,0 +1,5 @@
+<h2><%= current_user.username %></h2>
+
+<%= image_tag current_user.avatar.url(:medium) %>
+
+<%= link_to 'Edit', edit_user_registration_path(current_user) %>
