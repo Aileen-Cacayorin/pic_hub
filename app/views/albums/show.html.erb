@@ -1,0 +1,7 @@
+<h2><%= @album.name %></h2>
+
+<% @images.each do |image| %>
+  <li><%= image_tag image.picture.url(:thumb) %></li>
+<% end %>
+
+<%= render 'images/form' %>

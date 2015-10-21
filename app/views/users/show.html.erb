@@ -3,3 +3,11 @@
 <%= image_tag current_user.avatar.url(:medium) %>
 
 <%= link_to 'Edit', edit_user_registration_path(current_user) %>
+
+<% if current_user.albums.any? %>
+  <ul>
+    <% current_user.albums.each do |album| %>
+      <%= link_to album.name, user_album_path(current_user, album) %>
+    <% end %>
+  </ul>
+<% end %>
