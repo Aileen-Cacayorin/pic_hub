@@ -26,6 +26,19 @@ class ImagesController < ApplicationController
     @image = Image.find(params[:id])
   end
 
+  def destroy
+    @image = Image.find(params[:id])
+    if current_user == @image.user
+      @image.destroy
+      flash[:alert] = "Image gone forever!"
+      redirect_to :back
+    else
+      flash[:alert] = "This is not your image! This image belongs to #{@image.user.username}"
+      redirect_to :back
+    end
+
+  end
+
   private
   def image_params
     params.require(:image).permit(:picture)

@@ -1,13 +1,13 @@
 <h2><%= current_user.username %></h2>
 
 <%= image_tag current_user.avatar.url(:medium) %>
-<% if current_user == @album.user %>
+
 <%= link_to 'Edit', edit_user_registration_path(current_user) %>
-<% end %>
+
 <% if current_user.albums.any? %>
   <ul>
     <% current_user.albums.each do |album| %>
-      <%= link_to album.name, user_album_path(current_user, album) %>
+      <li><%= link_to album.name, user_album_path(current_user, album) %></li>
     <% end %>
   </ul>
 <% end %>

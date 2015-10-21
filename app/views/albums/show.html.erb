@@ -1,4 +1,5 @@
-<h2><%= @album.name %></h2>
+
+<h2><%= @album.user.username %>'s <%= @album.name %></h2>
 <% if current_user == @album.user %>
 <%= link_to "Delete", album_path(@album), :data => {:confirm => "Are you sure?",
                                           method: :delete} %>
@@ -7,5 +8,10 @@
 
 
 <% @images.each do |image| %>
-  <li><%= link_to (image_tag image.picture.url(:thumb)), image_path(image) %></li>
+  <li>
+    <%= link_to (image_tag image.picture.url(:thumb)), image_path(image) %>
+    <%= link_to image_path(image), :method => :delete do %>
+        <span ><i class="glyphicon glyphicon-trash"></i></span>
+     <% end %>
+    </li>
 <% end %>
