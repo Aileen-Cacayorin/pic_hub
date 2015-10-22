@@ -10,7 +10,7 @@ class ImagesController < ApplicationController
   end
 
   def create
-    if params.has_key?(:picture)
+    if params.has_key?(:image)
       @album = Album.find(params[:album_id])
       @image = Image.new(image_params)
       @image.album = @album
