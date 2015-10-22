@@ -1,4 +1,6 @@
 class TagsController < ApplicationController
+    before_action :authenticate_user!, only: [:create]
+
   def create
     @tag = Tag.new(tag_params)
     @image = Image.find(params[:image_id])

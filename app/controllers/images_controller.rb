@@ -1,13 +1,5 @@
 class ImagesController < ApplicationController
-
-  # def index
-  #   @album = Album.find(params[:album_id])
-  #   @images = @album.images
-  # end
-  #
-  # def new
-  #   @image = Image.new
-  # end
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def create
     if params.has_key?(:image)
