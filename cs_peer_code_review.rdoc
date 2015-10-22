@@ -1,0 +1,30 @@
+1. Is the Github documentation - commits and README - thorough and descriptive?
+   The commits and the README are well-worded, concise and easy to understand.
+
+2. Is there good spec coverage?
+   This project has just about the most specs I've ever seen. 10/10!
+
+3. Do all specs pass?
+   Yes they do. 23 examples and 0 failures.
+
+4. Is the application logic clear and easy to navigate?
+   Yes. The controllers and models are especially well-written and easy to read.
+
+5. Can you make a test payment through Stripe?
+   No. This feature has yet to be implemented into this application.
+
+6. Is the site user-friendly?
+   Yes. I understand the purpose of the site and find it easy to navigate on.
+
+7. Are there opportunities for refactoring?
+   From what I understand, this app doesn't require any refacorting at the present moment.
+
+8. What features stand out?
+   I like that users are prompted to create photo albums before adding photos to them. Good organizational feature.
+
+9. What features could be improved?
+   I would have liked to see the site in full action, so a seeds.rb file with pre-saved users and photo albums would be cool.
+
+
+10. Do you have any additional constructive criticism or positive feedback to share?
+    None that I can think of. The site fulfills its purposes. 
