@@ -1,13 +1,13 @@
 class ImagesController < ApplicationController
 
-  def index
-    @album = Album.find(params[:album_id])
-    @images = @album.images
-  end
-
-  def new
-    @image = Image.new
-  end
+  # def index
+  #   @album = Album.find(params[:album_id])
+  #   @images = @album.images
+  # end
+  #
+  # def new
+  #   @image = Image.new
+  # end
 
   def create
     if params.has_key?(:image)
