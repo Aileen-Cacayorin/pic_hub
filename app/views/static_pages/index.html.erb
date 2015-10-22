@@ -2,7 +2,7 @@
 <div id="masonry-container" class="transitions-enabled infinite-scroll clearfix">
 <% if @images.any? %>
   <% @images.each do |image| %>
-  <div class="box col3">
+  <div class="box col5">
       <%= link_to (image_tag image.picture.url(:display)), image_path(image) %>
     </div>
     <% end %>

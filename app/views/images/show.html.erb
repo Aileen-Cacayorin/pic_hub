@@ -21,4 +21,11 @@
   </ul>
 <% end %>
 
+<% if @tags.any? %>
+  <% @tags.each do |tag| %>
+    <%= tag.user.username %>
+  <% end %>
+<% end %>
+
+<%= render 'tags/form' %>
 <%= render 'comments/form'%>

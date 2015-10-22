@@ -10,19 +10,27 @@ class ImagesController < ApplicationController
   end
 
   def create
-    @album = Album.find(params[:album_id])
-    @image = Image.new(image_params)
-    @image.album = @album
-    @image.user = @album.user
-    if @image.save
-      redirect_to album_path(@album)
+    if params.has_key?(:picture)
+      @album = Album.find(params[:album_id])
+      @image = Image.new(image_params)
+      @image.album = @album
+      @image.user = @album.user
+      if @image.save
+        redirect_to album_path(@album)
+      else
+        flash[:notice] = "Image not added"
+        redirect_to :back
+      end
     else
-      flash[:notice] = "Image not added"
+      flash[:notice] = "Please attach an image"
       redirect_to :back
     end
   end
 
   def show
+    @users = User.all
+    @tags = Tag.all
+    @tag = Tag.new
     @image = Image.find(params[:id])
     @album = @image.album
     @comment = Comment.new
