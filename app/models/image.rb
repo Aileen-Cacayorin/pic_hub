@@ -23,4 +23,5 @@ class Image < ActiveRecord::Base
     end
     prev_image
   end
+
 end

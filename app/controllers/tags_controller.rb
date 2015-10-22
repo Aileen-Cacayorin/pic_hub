@@ -3,7 +3,6 @@ class TagsController < ApplicationController
     @tag = Tag.new(tag_params)
     @image = Image.find(params[:image_id])
     @tag.image = @image
-
     if @tag.save
       flash[:notice] = "Tag added"
       redirect_to :back

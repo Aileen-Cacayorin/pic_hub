@@ -29,9 +29,9 @@ class ImagesController < ApplicationController
   end
 
   def show
-    @users = User.all
     @tag = Tag.new
     @image = Image.find(params[:id])
+    @users = User.untagged(@image)
     @album = @image.album
     @tags = @image.tags
     @comment = Comment.new
