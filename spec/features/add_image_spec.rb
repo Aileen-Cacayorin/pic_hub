@@ -12,6 +12,6 @@ describe "the add image process" do
     click_link "Vacation"
     attach_file('image_picture', 'spec/support/IMG_4786.jpg')
     click_button "Add Image"
-    expect(page).to have_content("Vacation")
+    expect(page).to have_content("Image added")
   end
 end

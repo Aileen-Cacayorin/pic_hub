@@ -5,6 +5,7 @@ class TagsController < ApplicationController
     @tag.image = @image
 
     if @tag.save
+      flash[:notice] = "Tag added"
       redirect_to :back
     else
       flash[:alert] = "Person not tagged"

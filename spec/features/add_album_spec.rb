@@ -10,6 +10,6 @@ describe "the add album process" do
     fill_in 'Description', with: "Best trip ever"
 
     click_button "Create Album"
-    expect(page).to have_content "fakeuser"
+    expect(page).to have_content "Vacation"
   end
 end

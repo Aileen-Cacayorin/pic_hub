@@ -9,7 +9,7 @@
 
 <% @images.each do |image| %>
   <li>
-    <%= link_to (image_tag image.picture.url(:thumb)), image_path(image) %>
+    <%= link_to (image_tag image.picture.url(:thumb)),  image_path(image), id: "#{image.id}"%>
     <%= link_to image_path(image), :method => :delete do %>
         <span ><i class="glyphicon glyphicon-trash"></i></span>
      <% end %>

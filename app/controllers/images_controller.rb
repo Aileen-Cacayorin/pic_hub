@@ -16,6 +16,7 @@ class ImagesController < ApplicationController
       @image.album = @album
       @image.user = @album.user
       if @image.save
+        flash[:notice] = "Image added"
         redirect_to album_path(@album)
       else
         flash[:notice] = "Image not added"
@@ -29,10 +30,11 @@ class ImagesController < ApplicationController
 
   def show
     @users = User.all
-    @tags = Tag.all
+
     @tag = Tag.new
     @image = Image.find(params[:id])
     @album = @image.album
+    @tags = @image.tags
     @comment = Comment.new
   end
 

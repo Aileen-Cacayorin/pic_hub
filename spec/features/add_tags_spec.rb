@@ -10,8 +10,8 @@ describe "show image path" do
     attach_file('image_picture', 'spec/support/IMG_4786.jpg')
     click_button "Add Image"
     click_link ("Img 4786")
-    fill_in "Body", :with => "Nice pic"
-    click_button "Create Comment"
-    expect(page).to have_content("Nice pic") 
+    find('#tag_user_id').find(:xpath, 'option[1]').select_option
+    click_button "Tag"
+    expect(page).to have_content("Tag added")
   end
 end
