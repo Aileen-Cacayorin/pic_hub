@@ -1,5 +1,5 @@
 class ImagesController < ApplicationController
-  
+
   def index
     @album = Album.find(params[:album_id])
     @images = @album.images
@@ -24,6 +24,7 @@ class ImagesController < ApplicationController
 
   def show
     @image = Image.find(params[:id])
+    @album = @image.album
     @comment = Comment.new
   end
 

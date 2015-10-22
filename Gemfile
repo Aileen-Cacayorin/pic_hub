@@ -16,6 +16,7 @@ gem "paperclip"
 gem 'devise'
 gem 'factory_girl_rails'
 gem "hirb"
+gem 'masonry-rails'
 
 group :production do
   gem 'puma'

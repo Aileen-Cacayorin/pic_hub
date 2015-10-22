@@ -1,9 +1,9 @@
 <h1>Photostream</h1>
-<div class="container">
+<div id="masonry-container" class="transitions-enabled infinite-scroll clearfix">
 <% if @images.any? %>
   <% @images.each do |image| %>
-    <div class="col-md-6">
-      <%= image_tag image.picture.url(:display), class: "picture-tile" %>
+  <div class="box col3">
+      <%= link_to (image_tag image.picture.url(:display)), image_path(image) %>
     </div>
     <% end %>
 <% end %>

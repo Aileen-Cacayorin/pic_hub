@@ -1,4 +1,9 @@
+
+<%= link_to "Back to album", album_path(@album) %>
+<br>
 <%= image_tag @image.picture.url(:large) %>
+
+
 
 <% if @image.comments.any? %>
   <ul>
