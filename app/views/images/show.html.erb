@@ -21,6 +21,9 @@
   </ul>
 <% end %>
 
+<%=link_to 'Previous', image_path(@image.prev) %>
+<%=link_to 'Next', image_path(@image.next) %>
+
 <% if @tags.any? %>
   <% @tags.each do |tag| %>
     <%= tag.user.username %>

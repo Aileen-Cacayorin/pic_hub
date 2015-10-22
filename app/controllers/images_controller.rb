@@ -20,7 +20,7 @@ class ImagesController < ApplicationController
         redirect_to album_path(@album)
       else
         flash[:notice] = "Image not added"
-        redirect_to :back
+        redirect_to album_path(@album)
       end
     else
       flash[:notice] = "Please attach an image"
@@ -30,7 +30,6 @@ class ImagesController < ApplicationController
 
   def show
     @users = User.all
-
     @tag = Tag.new
     @image = Image.find(params[:id])
     @album = @image.album
